@@ -12,6 +12,8 @@ train['dayofweek'] = train.datetime.dt.dayofweek
 train['day'] = train.datetime.dt.day
 train['Hour']=train.datetime.dt.hour
 train['week']=train.datetime.dt.week
+train['YearAndDay']=(train['year']).map(str) +'_'+train['dayofyear'].map(str)
+
 
 print 'train is \n',train
 train.to_csv('Remodeled Train.csv')
