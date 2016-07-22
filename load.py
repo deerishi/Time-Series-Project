@@ -2,7 +2,14 @@ import numpy as np
 import pandas as pd
 
 dateparse=lambda x:pd.datetime.strptime(x,'%Y-%m-%d %H:%M:%S')
-datatrain=pd.read_csv('train.csv',parse_dates=['datetime'],date_parser=dateparse)
-print 'train is \n',datatrain
+train=pd.read_csv('train.csv',parse_dates=['datetime'],date_parser=dateparse)
 
-datatrain['year']=datatrain.datetime.dt.year
+
+train['year']=train.datetime.dt.year
+train['month']=train.datetime.dt.month
+train['dayofyear'] = train.datetime.dt.dayofyear
+train['dayofweek'] = train.datetime.dt.dayofweek
+train['day'] = train.datetime.dt.day
+
+print 'train is \n',train
+train.to_csv('Remodeled Train.csv')
