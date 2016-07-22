@@ -10,6 +10,8 @@ train['month']=train.datetime.dt.month
 train['dayofyear'] = train.datetime.dt.dayofyear
 train['dayofweek'] = train.datetime.dt.dayofweek
 train['day'] = train.datetime.dt.day
+train['Hour']=train.datetime.dt.hour
+train['week']=train.datetime.dt.week
 
 print 'train is \n',train
 train.to_csv('Remodeled Train.csv')
